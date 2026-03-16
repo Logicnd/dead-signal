@@ -48,10 +48,10 @@ export function SystemShell({
             <div className="relative p-4 sm:p-6">
               <div className="flex items-start justify-between gap-6 border-b border-white/8 pb-4">
                 <div>
-                  <p className="text-[0.62rem] uppercase tracking-[0.52em] text-red-400/80 signal-flicker">
+                  <p className="text-[0.62rem] uppercase tracking-[0.36em] text-red-400/80 signal-flicker">
                     residual intake
                   </p>
-                  <p className="mt-2 text-[0.68rem] uppercase tracking-[0.42em] text-zinc-500">
+                  <p className="mt-2 text-[0.66rem] uppercase tracking-[0.28em] text-zinc-500">
                     {label}
                   </p>
                 </div>
@@ -63,7 +63,7 @@ export function SystemShell({
               <div className="mt-4">{children}</div>
 
               {footer ? (
-                <div className="mt-5 border-t border-white/8 pt-3 text-[0.62rem] uppercase tracking-[0.28em] text-zinc-600">
+                <div className="mt-5 border-t border-white/8 pt-3 text-[0.6rem] uppercase tracking-[0.2em] text-zinc-600">
                   {footer}
                 </div>
               ) : null}

@@ -37,10 +37,10 @@ export default async function ObserverPage() {
         }
       >
         {stageTwoOpen ? (
-          <div className="space-y-6">
-            <section className="border border-white/8 bg-black/55 p-5 sm:p-6">
-              <div className="space-y-4 text-sm leading-7 text-zinc-400">
-                <p className="text-[0.64rem] uppercase tracking-[0.42em] text-red-300/70">
+          <div className="space-y-4">
+            <section className="border border-white/8 bg-black/55 p-4 sm:p-5">
+              <div className="space-y-3 text-sm leading-6 text-zinc-400">
+                <p className="text-[0.62rem] uppercase tracking-[0.34em] text-red-300/70">
                   witness record
                 </p>
                 {OBSERVER_ENTRIES.map((entry) => (
@@ -50,15 +50,15 @@ export default async function ObserverPage() {
             </section>
 
             {stageThreeOpen ? (
-              <section className="border border-white/8 bg-black/55 p-5 sm:p-6">
-                <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-                  <p className="max-w-2xl text-sm leading-7 text-zinc-400">
+              <section className="border border-white/8 bg-black/55 p-4 sm:p-5">
+                <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+                  <p className="max-w-2xl text-sm leading-6 text-zinc-400">
                     The final checksum is already accepted. The chamber beyond
                     this point is no longer pretending to be locked.
                   </p>
                   <Link
                     href="/sealed"
-                    className="border border-red-500/25 bg-red-500/8 px-4 py-3 text-[0.72rem] uppercase tracking-[0.34em] text-zinc-200 transition hover:border-red-400/45 hover:bg-red-500/12"
+                    className="border border-red-500/25 bg-red-500/8 px-4 py-2.5 text-[0.68rem] uppercase tracking-[0.28em] text-zinc-200 transition hover:border-red-400/45 hover:bg-red-500/12"
                   >
                     enter chamber
                   </Link>
