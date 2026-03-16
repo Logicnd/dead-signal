@@ -9,10 +9,12 @@
 
 html {
   color-scheme: dark;
+  overflow: hidden;
 }
 
 body {
   min-height: 100vh;
+  overflow: hidden;
   background:
     radial-gradient(circle at top, rgba(var(--accent), 0.14), transparent 30%),
     radial-gradient(circle at 18% 82%, rgba(255, 255, 255, 0.05), transparent 22%),
@@ -29,6 +31,7 @@ body {
     "Liberation Mono",
     monospace;
   text-rendering: optimizeLegibility;
+  overscroll-behavior: none;
 }
 
 body::before {

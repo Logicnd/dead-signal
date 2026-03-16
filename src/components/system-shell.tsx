@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { ViewportFit } from "@/components/viewport-fit";
 
 type SystemShellProps = {
   label: string;
@@ -20,7 +21,7 @@ export function SystemShell({
   width = "md",
 }: SystemShellProps) {
   return (
-    <main className="relative isolate flex min-h-screen items-center justify-center overflow-hidden px-4 py-8 sm:px-6 sm:py-10">
+    <main className="relative isolate h-dvh overflow-hidden px-3 py-3 sm:px-4 sm:py-4">
       <div aria-hidden="true" className="pointer-events-none absolute inset-0">
         <div className="signal-grid absolute inset-0 opacity-35" />
         <div className="signal-noise absolute inset-0" />
@@ -33,41 +34,43 @@ export function SystemShell({
         <div className="absolute inset-y-[14%] left-[16%] w-px bg-gradient-to-b from-transparent via-white/10 to-transparent" />
       </div>
 
-      <div className={`relative z-10 w-full ${widthClasses[width]}`}>
-        <div className="relative overflow-hidden border border-white/10 bg-black/70 shadow-[0_0_120px_rgba(255,72,32,0.08)] backdrop-blur-sm">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,88,46,0.12),transparent_34%),linear-gradient(180deg,rgba(255,255,255,0.03),transparent_18%)]" />
-          <div className="absolute inset-0 border border-red-500/10" />
-          <div className="absolute left-0 top-0 h-px w-full bg-gradient-to-r from-transparent via-red-500/40 to-transparent" />
-          <div className="absolute right-8 top-6 hidden text-right text-[0.62rem] uppercase tracking-[0.42em] text-zinc-700 sm:block">
-            <p>ext relay 03</p>
-            <p className="mt-2">latency unstable</p>
-          </div>
-
-          <div className="relative p-5 sm:p-8">
-            <div className="flex items-start justify-between gap-6 border-b border-white/8 pb-5">
-              <div>
-                <p className="text-[0.62rem] uppercase tracking-[0.52em] text-red-400/80 signal-flicker">
-                  residual intake
-                </p>
-                <p className="mt-3 text-[0.7rem] uppercase tracking-[0.42em] text-zinc-500">
-                  {label}
-                </p>
-              </div>
-              <div className="text-right text-[0.62rem] uppercase tracking-[0.38em] text-zinc-700 sm:hidden">
-                <p>relay 03</p>
-              </div>
+      <ViewportFit>
+        <div className={`relative z-10 mx-auto w-full ${widthClasses[width]}`}>
+          <div className="relative overflow-hidden border border-white/10 bg-black/70 shadow-[0_0_120px_rgba(255,72,32,0.08)] backdrop-blur-sm">
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,88,46,0.12),transparent_34%),linear-gradient(180deg,rgba(255,255,255,0.03),transparent_18%)]" />
+            <div className="absolute inset-0 border border-red-500/10" />
+            <div className="absolute left-0 top-0 h-px w-full bg-gradient-to-r from-transparent via-red-500/40 to-transparent" />
+            <div className="absolute right-8 top-6 hidden text-right text-[0.62rem] uppercase tracking-[0.42em] text-zinc-700 sm:block">
+              <p>ext relay 03</p>
+              <p className="mt-2">latency unstable</p>
             </div>
 
-            <div className="mt-6">{children}</div>
-
-            {footer ? (
-              <div className="mt-8 border-t border-white/8 pt-4 text-[0.66rem] uppercase tracking-[0.28em] text-zinc-600">
-                {footer}
+            <div className="relative p-4 sm:p-6">
+              <div className="flex items-start justify-between gap-6 border-b border-white/8 pb-4">
+                <div>
+                  <p className="text-[0.62rem] uppercase tracking-[0.52em] text-red-400/80 signal-flicker">
+                    residual intake
+                  </p>
+                  <p className="mt-2 text-[0.68rem] uppercase tracking-[0.42em] text-zinc-500">
+                    {label}
+                  </p>
+                </div>
+                <div className="text-right text-[0.62rem] uppercase tracking-[0.38em] text-zinc-700 sm:hidden">
+                  <p>relay 03</p>
+                </div>
               </div>
-            ) : null}
+
+              <div className="mt-4">{children}</div>
+
+              {footer ? (
+                <div className="mt-5 border-t border-white/8 pt-3 text-[0.62rem] uppercase tracking-[0.28em] text-zinc-600">
+                  {footer}
+                </div>
+              ) : null}
+            </div>
           </div>
         </div>
-      </div>
+      </ViewportFit>
     </main>
   );
 }
